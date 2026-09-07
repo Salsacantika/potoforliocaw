@@ -3,693 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portfolio — Caw</title>
-
-    <!-- Google Font -->
+    <title>Museum Portofolio - Neobrutalism</title>
+    
+    <!-- Google Fonts: DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <!-- Supabase JS Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- =========================================================
+        NAVBAR
+    ========================================================= -->
     <header class="navbar">
-
-        <a href="#home" class="logo">
-            CAW<span>.</span>
-        </a>
-
+        <div class="logo">MUSEUM<span>.</span></div>
         <nav>
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#skills">SKILLS</a>
-            <a href="#contact">CONTACT</a>
+            <a href="#about">TENTANG</a>
+            <a href="#projects">PAMERAN / PROYEK</a>
+            <a href="#experience">PENGALAMAN</a>
         </nav>
-
-        <a href="#contact" class="nav-button">
-            LET'S TALK ↗
-        </a>
-
+        <a href="#contact" class="nav-button">HUBUNGI SAYA</a>
     </header>
 
-
-    <!-- ================= HERO ================= -->
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="hero-left">
-
-                <div class="mini-label">
-                    ✦ WEB DEVELOPER
-                </div>
-
-                <h1>
-                    BUILDING
-                    <span>WEBSITES</span>
-                    THAT STAND OUT.
-                </h1>
-
-                <p class="hero-description">
-                    Halo! Saya seorang pelajar dan web developer
-                    yang suka membuat website, aplikasi, dan
-                    game sederhana dengan desain yang menarik.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-black">
-                        VIEW MY WORK ↘
-                    </a>
-
-                    <a href="#contact" class="btn btn-yellow">
-                        CONTACT ME
-                    </a>
-                </div>
-
+    <!-- =========================================================
+        HERO SECTION
+    ========================================================= -->
+    <section class="hero" id="home">
+        <div class="hero-left">
+            <div class="mini-label">ARSIP DIGITAL & KARYA</div>
+            <h1>PAMERAN <span>KARYA</span> SAYA.</h1>
+            <p class="hero-description">
+                Selamat datang di museum digital pribadi saya. Tempat di mana setiap baris kode, desain, dan eksperimen dikurasi sebagai artefak pencapaian.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-black">LIHAT KOLEKSI &rarr;</a>
+                <a href="#contact" class="btn btn-yellow">KIRIM PESAN</a>
             </div>
-
-
-            <div class="hero-right">
-
-                <div class="profile-card">
-
-                    <div class="card-top">
-                        <span>PROFILE_01</span>
-                        <span>● ● ●</span>
-                    </div>
-
+        </div>
+        
+        <div class="hero-right">
+            <div class="star">✦</div>
+            <div class="profile-card">
+                <div class="card-top">
+                    <span>ARTIKEL #001</span>
+                    <span>STATUS: AKTIF</span>
+                </div>
+                
+                <div class="profile-photo">
                     <div class="profile-photo">
-                        <div class="photo-placeholder">
-                            <img src="gua.png" alt="Profile Photo" class="profile-img">
-                        </div>
+                    <!-- Foto profil diganti dengan gua.png -->
+                    <img src="gua.png" alt="Foto Profil" class="profile-img">
+                </div>
+                </div>
+                <div class="profile-info">
+                    <div>
+                        <small>PERAN UTAMA</small>
+                        <strong>Full-Stack Dev</strong>
                     </div>
-
-                    <div class="profile-info">
-
-                        <div>
-                            <small>NAME</small>
-                            <strong>CAW</strong>
-                        </div>
-
-                        <div>
-                            <small>ROLE</small>
-                            <strong>DEVELOPER</strong>
-                        </div>
-
+                    <div>
+                        <small>LOKASI</small>
+                        <strong>Indonesia</strong>
                     </div>
-
                 </div>
-
-                <div class="sticker">
-                    HELLO! 👋
-                </div>
-
-                <div class="star">
-                    ✦
-                </div>
-
             </div>
-
-        </section>
-
-
-        <!-- ================= MARQUEE ================= -->
-
-        <div class="marquee">
-
-            <div class="marquee-content">
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-                WEB DEVELOPMENT ✦ UI DESIGN ✦ CREATIVE CODING ✦
-            </div>
-
+            <div class="sticker">KURATOR KODE</div>
         </div>
+    </section>
 
-
-        <!-- ================= ABOUT ================= -->
-
-        <section class="section about" id="about">
-
-            <div class="section-title">
-
-                <span>01</span>
-
-                <h2>
-                    ABOUT<br>
-                    <span>ME.</span>
-                </h2>
-
-            </div>
-
-
-            <div class="about-content">
-
-                <div class="about-text">
-
-                    <p class="big-text">
-                        SAYA SUKA
-                        <span>MEMBUAT</span>
-                        SESUATU DARI
-                        IDE MENJADI
-                        WEBSITE YANG
-                        BISA DIGUNAKAN.
-                    </p>
-
-                    <p>
-                        Saya adalah remaja yang tertarik pada dunia
-                        pemrograman, web development, UI design,
-                        dan creative coding.
-                    </p>
-
-                    <p>
-                        Saya senang mencoba berbagai teknologi
-                        dan mengubah ide sederhana menjadi
-                        sebuah project yang nyata.
-                    </p>
-
-                </div>
-
-
-                <div class="about-box">
-
-                    <div class="number">
-                        06
-                    </div>
-
-                    <h3>
-                        PROJECTS
-                        <br>
-                        COMPLETED
-                    </h3>
-
-                    <p>
-                        Website, aplikasi, dan game
-                        yang pernah saya kerjakan.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SKILLS ================= -->
-
-        <section class="section skills" id="skills">
-
-            <div class="section-title">
-
-                <span>02</span>
-
-                <h2>
-                    MY<br>
-                    <span>SKILLS.</span>
-                </h2>
-
-            </div>
-
-
-           <div class="skills-grid">
-
-    <div class="skill-card yellow">
-        <div class="skill-top">
-            <span>01</span>
-            <strong class="skill-percentage">95%</strong>
+    <!-- =========================================================
+        MARQUEE SECTION
+    ========================================================= -->
+    <div class="marquee">
+        <div class="marquee-content">
+            ✦ KREATIF ✦ INOVATIF ✦ NEOBRUTALISM ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH ✦ KREATIF ✦ INOVATIF ✦ NEOBRUTALISM ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH
         </div>
-        <h3>HTML</h3>
-        <p>Semantic & Responsive Website</p>
     </div>
 
-    <div class="skill-card pink">
-        <div class="skill-top">
-            <span>02</span>
-            <strong class="skill-percentage">90%</strong>
+    <!-- =========================================================
+        ABOUT SECTION
+    ========================================================= -->
+    <section class="section about" id="about">
+        <div class="section-title">
+            <span>01 // PROFIL</span>
+            <h2>TENTANG <span>MUSEUM INI</span></h2>
         </div>
-        <h3>CSS</h3>
-        <p>Modern UI & Responsive Design</p>
-    </div>
-
-    <div class="skill-card blue">
-        <div class="skill-top">
-            <span>03</span>
-            <strong class="skill-percentage">85%</strong>
-        </div>
-        <h3>JAVASCRIPT</h3>
-        <p>Interactive Web Experience</p>
-    </div>
-
-    <div class="skill-card green">
-        <div class="skill-top">
-            <span>04</span>
-            <strong class="skill-percentage">80%</strong>
-        </div>
-        <h3>LARAVEL</h3>
-        <p>Backend & Web Application</p>
-    </div>
-
-    <div class="skill-card white">
-        <div class="skill-top">
-            <span>05</span>
-            <strong class="skill-percentage">85%</strong>
-        </div>
-        <h3>PHP</h3>
-        <p>Server Side Programming</p>
-    </div>
-
-    <div class="skill-card orange">
-        <div class="skill-top">
-            <span>06</span>
-            <strong class="skill-percentage">90%</strong>
-        </div>
-        <h3>FIGMA</h3>
-        <p>UI Design & Prototyping</p>
-    </div>
-
-</div>
-        </section>
-
-
-        <!-- ================= PROJECTS ================= -->
-
-        <section class="section projects" id="projects">
-
-            <div class="section-title">
-
-                <span>06</span>
-
-                <h2>
-                    SELECTED<br>
-                    <span>WORK.</span>
-                </h2>
-
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p class="big-text">
+                    Ruang pameran digital untuk mengeksplorasi <span>ide-ide liar</span> menjadi aplikasi nyata.
+                </p>
+                <p>
+                    Setiap proyek yang ada di galeri ini dibuat dengan pendekatan fungsional, estetika berani, serta performa teknis yang optimal. Saya percaya bahwa web modern tidak harus membosankan—ia bisa menjadi karya seni interaktif.
+                </p>
+                <p>
+                    Dari backend yang kokoh hingga antarmuka pengguna yang mencolok, semuanya dirancang untuk meninggalkan kesan mendalam bagi setiap pengunjung.
+                </p>
             </div>
-
-
-            <div class="project-list">
-
-
-                <!-- PROJECT 1 -->
-
-                <article class="project-card">
-
-                    <div class="project-image project-one">
-
-                        <div class="project-number">
-                            01
-                        </div>
-
-                        <div class="fake-browser">
-
-                            <div class="browser-top">
-                                <i></i>
-                                <i></i>
-                                <i></i>
-                            </div>
-
-                            <div class="browser-content">
-
-                                <strong>
-                                        BUKU TAMU
-                                </strong>
-
-                                <div class="fake-lines"></div>
-                                <div class="fake-lines short"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-info">
-
-                        <div>
-                            <span>WEB APPLICATION</span>
-
-                            <h3>
-                                BUKU TAMU DIGITAL
-                            </h3>
-                        </div>
-
-                        <p>
-                            Aplikasi buku tamu digital untuk sekolah <br> fitur pencatatan dan pengelolaan data tamu.
-                        </p>
-
-                        <div class="tech">
-
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                            <span>SUPABASE</span>
-
-                        </div>
-
-                        <a href="#" class="project-link">
-                            VIEW PROJECT ↗
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 2 -->
-
-                <article class="project-card reverse">
-
-                    <div class="project-image project-two">
-
-                        <div class="project-number">
-                            02
-                        </div>
-
-                        <div class="pos-screen">
-
-                            <div class="pos-header">
-                                MAISON POS
-                            </div>
-
-                            <div class="pos-products">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-
-                            <div class="pos-total">
-                                TOTAL
-                                <strong>Rp 250K</strong>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-info">
-
-                        <div>
-                            <span>WEB APPLICATION</span>
-
-                            <h3>
-                                MAISON POS
-                            </h3>
-                        </div>
-
-                        <p>
-                            Sistem point of sale untuk toko 
-                            dengan fitur produk, stok, penjualan,
-                            dan pengelolaan pengguna.
-                        </p>
-
-                        <div class="tech">
-
-                            <span>LARAVEL</span>
-                            <span>PHP</span>
-                            <span>MYSQL</span>
-                            <span>BOOTSTRAP</span>
-
-                        </div>
-
-                        <a href="#" class="project-link">
-                            VIEW PROJECT ↗
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 3 -->
-
-                <article class="project-card">
-
-                    <div class="project-image project-three">
-
-                        <div class="project-number">
-                            03
-                        </div>
-
-                        <div class="game-screen">
-
-                            <div class="game-title">
-                                p5.js GAME SPIDER-GUNNER
-                            </div>
-
-                            <div class="game-player">
-                                🕷️
-                            </div>
-
-                            <div class="game-platform"></div>
-
-                            <div class="game-coin">
-                                ★
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-info">
-
-                        <div>
-                            <span>CREATIVE CODING</span>
-
-                            <h3>
-                                P5.JS GAME
-                            </h3>
-                        </div>
-
-                        <p>
-                           Game sederhana berbasis web menggunakan p5.js dengan konsep endless runner.
-                        </p>
-
-                        <div class="tech">
-
-                            <span>JAVASCRIPT</span>
-                            <span>P5.JS</span>
-                            <span>HTML</span>
-
-                        </div>
-
-                        <a href="#" class="project-link">
-                            VIEW PROJECT ↗
-                        </a>
-
-                    </div>
-
-                </article>
-
+            
+            <div class="about-box">
+                <div class="number">10+</div>
+                <h3>ARTEFAK TERKURASI</h3>
+                <p>Proyek-proyek terpilih yang telah melalui proses pengembangan, pengujian, dan publikasi sukses.</p>
             </div>
-            <div class="project-list">
-
-    <!-- PROJECT 1 -->
-   
-
-    <!-- PROJECT 4 (Baru) -->
-    <article class="project-card">
-        <div class="project-image project-four">
-            <div class="project-number">04</div>
-            <div class="pos-screen">e-KOPERASI</div>
         </div>
-        <div class="project-info">
-            <div>
-                <span>API INTEGRATION</span>
-                <h3>e-KOPERASI</h3>
-            </div>
-            <p>Aplikasi e-koperasi dengan fitur manajemen inventaris dan transaksi.</p>
-            <div class="tech">
-                <span>API</span><span>JS</span><span>CSS</span>
-            </div>
-            <a href="#" class="project-link">VIEW PROJECT ↗</a>
+    </section>
+
+    <!-- =========================================================
+        PROJECTS SECTION (DYNAMIC SUPABASE)
+    ========================================================= -->
+    <section class="section projects" id="projects">
+        <div class="section-title">
+            <span>03 // EXHIBITS</span>
+            <h2>MUSEUM <span>PROJECTS</span></h2>
         </div>
-    </article>
-    <article class="project-card">
-        <div class="project-image project-four">
-            <div class="project-number">04</div>
-            <div class="pos-screen">GAME 3D UNITY</div>
+        
+        <!-- Container penampung data dinamis dari Supabase -->
+        <div class="project-list" id="project-list-container">
+            <!-- Data akan dimuat secara otomatis via script.js -->
+            <p style="font-weight: 900; grid-column: 1 / -1; text-align: center;">Memuat artefak dari database museum...</p>
         </div>
-        <div class="project-info">
-            <div>
-                <span>API INTEGRATION</span>
-                <h3>GAME 3D UNITY
-                </h3>
-            </div>
-            <p>Aplikasi game 3D berbasis Unity dengan grafik modern.</p>
-            <div class="tech">
-                <span>UNITY</span><span>C#</span><span>3D</span>
-            </div>
-            <a href="#" class="project-link">VIEW PROJECT ↗</a>
+    </section>
+
+    <!-- =========================================================
+        EXPERIENCE SECTION
+    ========================================================= -->
+    <section class="section experience" id="experience">
+        <div class="section-title">
+            <span>04 // LINIMASA</span>
+            <h2>JEJAK <span>PENGALAMAN</span></h2>
         </div>
-    </article>
 
-    <!-- PROJECT 5 (Baru) -->
-    <article class="project-card">
-        <div class="project-image project-five">
-            <div class="project-number">05</div>
-            <div class="pos-screen">PORTFOLIO NON-FORMAL</div>
-        </div>
-        <div class="project-info">
-            <div>
-                <span>UI DESIGN</span>
-                <h3>PORTFOLIO NON-FORMAL</h3>
-            </div>
-            <p>Arsip project website portofolio pertama saya.</p>
-            <div class="tech">
-                <span>HTML</span><span>CSS</span>
-            </div>
-            <a href="#" class="project-link">VIEW PROJECT ↗</a>
-        </div>
-    </article>
-
-</div>
-
-        </section>
-
-
-        <!-- ================= EXPERIENCE ================= -->
-
-        <section class="section experience">
-
-            <div class="section-title">
-
-                <span>04</span>
-
-                <h2>
-                    WHAT I<br>
-                    <span>DO.</span>
-                </h2>
-
-            </div>
-
-
-            <div class="experience-grid">
-
-                <div class="experience-card">
-
-                    <span>01</span>
-
-                    <h3>
-                        WEB<br>
-                        DEVELOPMENT
-                    </h3>
-
-                    <p>
-                        Membuat website responsive
-                        menggunakan HTML, CSS,
-                        JavaScript dan framework.
-                    </p>
-
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div>
+                    <span>2024 - SEKARANG</span>
+                    <h3 style="margin-top: 10px;">Senior Frontend Engineer</h3>
                 </div>
+                <p>Memimpin pengembangan arsitektur antarmuka web, optimasi performa, serta penerapan desain sistem baru.</p>
+            </div>
 
-
-                <div class="experience-card yellow-card">
-
-                    <span>02</span>
-
-                    <h3>
-                        UI<br>
-                        DESIGN
-                    </h3>
-
-                    <p>
-                        Membuat interface website
-                        yang clean, modern,
-                        dan mudah digunakan.
-                    </p>
-
+            <div class="experience-card yellow-card">
+                <div>
+                    <span>2022 - 2024</span>
+                    <h3 style="margin-top: 10px;">Full-Stack Creator</h3>
                 </div>
+                <p>Membangun berbagai aplikasi SaaS mandiri, integrasi basis data Supabase, dan solusi digital kreatif.</p>
+            </div>
 
-
-                <div class="experience-card">
-
-                    <span>03</span>
-
-                    <h3>
-                        CREATIVE<br>
-                        CODING
-                    </h3>
-
-                    <p>
-                        Membuat game dan eksperimen
-                        visual menggunakan JavaScript
-                        dan p5.js.
-                    </p>
-
+            <div class="experience-card">
+                <div>
+                    <span>2020 - 2022</span>
+                    <h3 style="margin-top: 10px;">UI/UX Web Developer</h3>
                 </div>
-
+                <p>Merancang tata letak situs web interaktif dan menerjemahkan kebutuhan klien ke dalam kode yang bersih.</p>
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- =========================================================
+        CONTACT SECTION
+    ========================================================= -->
+    <section class="contact" id="contact">
+        <div class="contact-star">✦</div>
+        <div class="contact-label">HUBUNGI KURATOR</div>
+        <h2>MARI BUAT <span>SESUATU BERSAMA.</span></h2>
+        <p>Punya ide proyek, kolaborasi, atau sekadar ingin berdiskusi seputar teknologi dan desain? Pintu galeri selalu terbuka.</p>
+        <a href="mailto:email@domainanda.com" class="contact-button">KIRIM EMAIL SEKARANG</a>
+    </section>
 
-
-        <!-- ================= CONTACT ================= -->
-
-        <section class="contact" id="contact">
-
-            <div class="contact-star">
-                ✦
+    <!-- =========================================================
+        FOOTER
+    ========================================================= -->
+    <footer>
+        <div class="footer-logo">MUSEUM<span>.</span></div>
+        <p>© 2026 — Dibuat dengan gaya Neobrutalism.</p>
+        <div class="social">
+            <a href="https://github.com" target="_blank">GITHUB</a>
+            <a href="https://linkedin.com" target="_blank">LINKEDIN</a>
+            <a href="https://instagram.com" target="_blank">INSTAGRAM</a>
+        </div>
+    </footer>
+    <!-- =========================================================
+        MODAL FORM TAMBAH PROYEK (KHUSUS ADMIN)
+    ========================================================= -->
+    <div id="add-project-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: white; border: 4px solid #111; box-shadow: 12px 12px 0 #111; width: 100%; max-width: 500px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-size: 24px; font-weight: 900; letter-spacing: -1px;">TAMBAH ARTEFAK BARU</h3>
+                <button id="close-modal-btn" style="background: #EF476F; color: white; border: 2px solid #111; font-weight: 900; padding: 5px 10px; cursor: pointer; box-shadow: 3px 3px 0 #111;">X</button>
             </div>
-
-            <span class="contact-label">
-                HAVE A PROJECT?
-            </span>
-
-            <h2>
-                LET'S MAKE
-                <span>IT HAPPEN.</span>
-            </h2>
-
-            <p>
-                Punya ide atau project yang ingin dibuat?
-                Mari ngobrol dan buat sesuatu yang keren.
-            </p>
-
-            <a href="mailto:your@email.com" class="contact-button">
-                SAY HELLO ↗
-            </a>
-
-        </section>
-
-
-        <!-- ================= FOOTER ================= -->
-
-        <footer>
-
-            <div class="footer-logo">
-                CAW<span>.</span>
+            
+            <form id="add-project-form">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="proj-title" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">JUDUL PROYEK</label>
+                    <input type="text" id="proj-title" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="proj-category" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">KATEGORI (Cth: ARCHEOLOGY / WEB)</label>
+                    <input type="text" id="proj-category" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="proj-desc" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">DESKRIPSI</label>
+                    <textarea id="proj-desc" rows="3" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700; font-family:inherit;"></textarea>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="proj-tech" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">TEKNOLOGI (Pisahkan dengan koma, cth: HTML, CSS)</label>
+                    <input type="text" id="proj-tech" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+               <!-- Bagian input gambar di dalam modal index.html -->
+             <div class="form-group" style="margin-bottom: 15px;">
+                <label for="proj-file" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">PILIH FILE GAMBAR ARTEFAK</label>
+                <input type="file" id="proj-file" accept="image/*" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
             </div>
-
-            <p>
-                © 2026 CAW. ALL RIGHTS RESERVED.
-            </p>
-
-            <div class="social">
-
-                <a href="#">GITHUB</a>
-                <a href="#">INSTAGRAM</a>
-                <a href="#">LINKEDIN</a>
-
+                     <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="proj-url" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">LINK PROYEK / Tautan Luar</label>
+                    <input type="text" id="proj-url" placeholder="#" style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+                <button type="submit" style="width:100%; padding:14px; background:#06D6A0; color:#111; border:3px solid #111; font-weight:900; cursor:pointer; box-shadow:5px 5px 0 #111;">SIMPAN ARTEFAK &rarr;</button>
+            </form>
+        </div>
+    </div>
+<!-- =========================================================
+        MODAL FORM EDIT PROYEK (KHUSUS ADMIN)
+    ========================================================= -->
+    <div id="edit-project-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: white; border: 4px solid #111; box-shadow: 12px 12px 0 #111; width: 100%; max-width: 500px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-size: 24px; font-weight: 900; letter-spacing: -1px;">EDIT ARTEFAK</h3>
+                <button id="close-edit-modal-btn" style="background: #EF476F; color: white; border: 2px solid #111; font-weight: 900; padding: 5px 10px; cursor: pointer; box-shadow: 3px 3px 0 #111;">X</button>
             </div>
-
-        </footer>
-
-    </main>
-
-
+            
+            <form id="edit-project-form">
+                <input type="hidden" id="edit-proj-id">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">JUDUL PROYEK</label>
+                    <input type="text" id="edit-proj-title" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">KATEGORI</label>
+                    <input type="text" id="edit-proj-category" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">DESKRIPSI</label>
+                    <textarea id="edit-proj-desc" rows="3" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700; font-family:inherit;"></textarea>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">TEKNOLOGI (Pisahkan dengan koma)</label>
+                    <input type="text" id="edit-proj-tech" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">GANTI FILE GAMBAR (Opsional)</label>
+                    <input type="file" id="edit-proj-file" accept="image/*" style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                    <small style="display:block; margin-top:5px; font-weight:700; color:#555;">Biarkan kosong jika tidak ingin mengubah gambar.</small>
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">LINK PROYEK</label>
+                    <input type="text" id="edit-proj-url" style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                </div>
+                <button type="submit" style="width:100%; padding:14px; background:#FFD166; color:#111; border:3px solid #111; font-weight:900; cursor:pointer; box-shadow:5px 5px 0 #111;">PERBARUI ARTEFAK &rarr;</button>
+            </form>
+        </div>
+    </div>
+    <!-- Custom Javascript (Supabase integration) -->
     <script src="script.js"></script>
-
 </body>
 </html>

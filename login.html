@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Museum - Neobrutalism</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <!-- Supabase JS Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .login-body {
+            background: #F5F0E8;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 450px;
+            background: white;
+            border: 4px solid #111;
+            box-shadow: 12px 12px 0 #111;
+            padding: 40px;
+            position: relative;
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .login-header h1 {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-top: 10px;
+        }
+
+        .login-header h1 span {
+            color: #CC8899;
+            -webkit-text-stroke: 2px #111;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 3px solid #111;
+            background: #F5F0E8;
+            font-family: "DM Sans", sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            outline: none;
+            box-shadow: 4px 4px 0 #111;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: #FF9CB4;
+            color: #111;
+            border: 3px solid #111;
+            font-weight: 900;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 6px 6px 0 #111;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0 #111;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 12px;
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background: #EF476F;
+            color: white;
+            border: 2px solid #111;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body class="login-body">
+
+    <div class="login-card">
+        <div class="mini-label" style="margin-bottom: 15px;">AREA TERBATAS</div>
+        <div class="login-header">
+            <h1>LOGIN <span>ADMIN</span></h1>
+            <p style="font-size: 13px; margin-top: 5px; font-weight: 700;">Khusus kurator untuk mengelola artefak museum.</p>
+        </div>
+
+        <div id="error-alert" class="error-message">Email atau password salah!</div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="admin-email">EMAIL ADMIN</label>
+                <input type="email" id="admin-email" placeholder="admin@museum.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="admin-password">PASSWORD</label>
+                <input type="password" id="admin-password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="login-btn">MASUK SEBAGAI ADMIN &rarr;</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="index.html" class="back-link">&larr; KEMBALI KE BERANDA (MODE USER)</a>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://skbedgzcqwehxjunaocl.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrYmVkZ3pjcXdlaHhqdW5hb2NsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTQ1NzYsImV4cCI6MjEwNDMzMDU3Nn0.f2h_H_EppRgVLLvoOmu7T7KyAfmmgMs-WT5AXsasqWE';
+
+        const { createClient } = supabase;
+        const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        const loginForm = document.getElementById('login-form');
+        const errorAlert = document.getElementById('error-alert');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('admin-email').value.trim();
+            const password = document.getElementById('admin-password').value.trim();
+
+            console.log("--- DATA YANG DIKIRIM ---");
+            console.log("Email:", email);
+            console.log("Password:", password);
+
+            errorAlert.style.display = 'none';
+
+            try {
+                const { data, error } = await _supabase
+                    .from('admins')
+                    .select('*')
+                    .eq('email', email)
+                    .eq('password', password);
+
+                console.log("--- RESPON DARI SUPABASE ---");
+                console.log("Error object:", error);
+                console.log("Data result:", data);
+
+                if (error) {
+                    throw error;
+                }
+
+                if (data && data.length > 0) {
+                    console.log("Login sukses! Menyimpan ke localStorage...");
+                    localStorage.setItem('isAdminLoggedIn', 'true');
+                    localStorage.setItem('adminEmail', data[0].email);
+                    alert('Login Berhasil! Selamat datang Kurator.');
+                    window.location.href = 'index.html'; 
+                } else {
+                    console.warn("Data kosong (array length 0). Email/password tidak cocok atau diblokir RLS.");
+                    errorAlert.style.display = 'block';
+                    errorAlert.textContent = 'Email atau password salah!';
+                }
+            } catch (err) {
+                console.error("Catch error tertangkap:", err.message);
+                errorAlert.style.display = 'block';
+                errorAlert.textContent = 'Terjadi kesalahan: ' + err.message;
+            }
+        });
+    </script>
+</body>
+</html>
