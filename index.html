@@ -15,6 +15,7 @@
 
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -24,12 +25,24 @@
     <header class="navbar">
         <div class="logo">MUSEUM<span>.</span></div>
         <nav>
-            <a href="#about">TENTANG</a>
-            <a href="#projects">PAMERAN / PROYEK</a>
-            <a href="#experience">PENGALAMAN</a>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">EXHIBITION</a>
+            <a href="about.html#experience">EXPERIENCE</a>
+            <a href="about.html#creators">CREATORS</a>
         </nav>
-        <a href="#contact" class="nav-button">HUBUNGI SAYA</a>
+        <div class="navbar-right">
+         <button class="dark-toggle-btn">🌙</button>
+            <a href="login.html" id="login-admin-btn" class="nav-button">LOGIN ADMIN</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Buka menu navigasi">☰</button>
+        </div>
     </header>
+
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay">
+        <a href="#about">ABOUT</a>
+        <a href="#projects">EXHIBITION</a>
+        <a href="about.html">EXPERIENCE</a>
+        <a href="#contact">CONTACT</a>
+    </div>
 
     <!-- =========================================================
         HERO SECTION
@@ -57,18 +70,17 @@
                 
                 <div class="profile-photo">
                     <div class="profile-photo">
-                    <!-- Foto profil diganti dengan gua.png -->
-                    <img src="gua.png" alt="Foto Profil" class="profile-img">
+                    <img src="orang.png" alt="Foto Profil" class="profile-img">
                 </div>
                 </div>
                 <div class="profile-info">
                     <div>
-                        <small>PERAN UTAMA</small>
+                        <small>programming</small>
                         <strong>Full-Stack Dev</strong>
                     </div>
                     <div>
-                        <small>LOKASI</small>
-                        <strong>Indonesia</strong>
+                        <small>TOTAL PENGUNJUNG</small>
+                        <strong>100k</strong>
                     </div>
                 </div>
             </div>
@@ -81,7 +93,9 @@
     ========================================================= -->
     <div class="marquee">
         <div class="marquee-content">
-            ✦ KREATIF ✦ INOVATIF ✦ NEOBRUTALISM ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH ✦ KREATIF ✦ INOVATIF ✦ NEOBRUTALISM ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH
+            ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH
+            ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH
+            ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ KARYA DIGITAL ✦ KODE BERSIH
         </div>
     </div>
 
@@ -113,6 +127,29 @@
                 <p>Proyek-proyek terpilih yang telah melalui proses pengembangan, pengujian, dan publikasi sukses.</p>
             </div>
         </div>
+     <div class="terminal-window">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="t-btn close"></span>
+            <span class="t-btn minimize"></span>
+            <span class="t-btn maximize"></span>
+        </div>
+        <div class="terminal-title">bash - curating-artifacts.sh</div>
+    </div>
+    
+    <div class="terminal-body" id="terminal-content">
+        <div class="terminal-line"><span class="t-user">visitor@museum:~$</span> npm run initialize-creative-mind</div>
+        <div class="terminal-line t-output">> Loading functional approaches... [OK]</div>
+        <div class="terminal-line t-output">> Injecting bold aesthetics... [OK]</div>
+        <div class="terminal-line t-output">> Optimizing technical performance... [100%]</div>
+    </div>
+
+    <div class="terminal-input-row">
+        <span class="t-user">visitor@museum:~$</span>
+        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+    </div>
+</div>
+
     </section>
 
     <!-- =========================================================
@@ -124,72 +161,96 @@
             <h2>MUSEUM <span>PROJECTS</span></h2>
         </div>
         
-        <!-- Container penampung data dinamis dari Supabase -->
+        <div class="filter-bar" id="filter-bar"></div>
+
         <div class="project-list" id="project-list-container">
-            <!-- Data akan dimuat secara otomatis via script.js -->
             <p style="font-weight: 900; grid-column: 1 / -1; text-align: center;">Memuat artefak dari database museum...</p>
         </div>
     </section>
 
-    <!-- =========================================================
-        EXPERIENCE SECTION
-    ========================================================= -->
-    <section class="section experience" id="experience">
-        <div class="section-title">
-            <span>04 // LINIMASA</span>
-            <h2>JEJAK <span>PENGALAMAN</span></h2>
-        </div>
+<section class="cta-section">
+    <div class="bg-shape circle-one"></div>
+    <div class="bg-shape circle-two"></div>
+    <div class="bg-shape card-mockup-left"></div>
+    <div class="bg-shape card-mockup-right"></div>
+    <div class="bg-shape cross-one">✦</div>
+    <div class="bg-shape cross-two">✕</div>
+    <div class="bg-shape dot-pattern"></div>
 
-        <div class="experience-grid">
-            <div class="experience-card">
-                <div>
-                    <span>2024 - SEKARANG</span>
-                    <h3 style="margin-top: 10px;">Senior Frontend Engineer</h3>
-                </div>
-                <p>Memimpin pengembangan arsitektur antarmuka web, optimasi performa, serta penerapan desain sistem baru.</p>
-            </div>
-
-            <div class="experience-card yellow-card">
-                <div>
-                    <span>2022 - 2024</span>
-                    <h3 style="margin-top: 10px;">Full-Stack Creator</h3>
-                </div>
-                <p>Membangun berbagai aplikasi SaaS mandiri, integrasi basis data Supabase, dan solusi digital kreatif.</p>
-            </div>
-
-            <div class="experience-card">
-                <div>
-                    <span>2020 - 2022</span>
-                    <h3 style="margin-top: 10px;">UI/UX Web Developer</h3>
-                </div>
-                <p>Merancang tata letak situs web interaktif dan menerjemahkan kebutuhan klien ke dalam kode yang bersih.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================
-        CONTACT SECTION
-    ========================================================= -->
-    <section class="contact" id="contact">
-        <div class="contact-star">✦</div>
-        <div class="contact-label">HUBUNGI KURATOR</div>
-        <h2>MARI BUAT <span>SESUATU BERSAMA.</span></h2>
-        <p>Punya ide proyek, kolaborasi, atau sekadar ingin berdiskusi seputar teknologi dan desain? Pintu galeri selalu terbuka.</p>
-        <a href="mailto:email@domainanda.com" class="contact-button">KIRIM EMAIL SEKARANG</a>
-    </section>
+    <div class="cta-content">
+        <h2>Punya Ide Hebat atau Proyek Kreatif?<br>Mari Bekerja Sama!</h2>
+        <p>Buka ruang diskusi untuk kolaborasi pengembangan web, desain sistem, atau arsitektur kode.</p>
+        <a href="#contact" class="btn-cta">Mulai Kolaborasi</a>
+    </div>
+</section>
 
     <!-- =========================================================
         FOOTER
     ========================================================= -->
-    <footer>
-        <div class="footer-logo">MUSEUM<span>.</span></div>
-        <p>© 2026 — Dibuat dengan gaya Neobrutalism.</p>
-        <div class="social">
-            <a href="https://github.com" target="_blank">GITHUB</a>
-            <a href="https://linkedin.com" target="_blank">LINKEDIN</a>
-            <a href="https://instagram.com" target="_blank">INSTAGRAM</a>
+    <footer class="main-footer">
+    <div class="footer-top">
+        <div class="footer-col brand-col">
+            <div class="footer-logo">MUSEUM<span>.</span></div>
+            <p class="brand-desc">Platform arsip karya digital dan kurasi artefak kode terbaik. Tempat mengeksplorasi ide liar menjadi aplikasi nyata.</p>
+           <div class="social-icons" style="display: flex; gap: 14px; margin-top: 15px; align-items: center;">
+            <a href="https://instagram.com/usernamekamu" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="width: 46px; height: 46px; background: #111; color: #FFF; border: 2px solid #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.4); text-decoration: none;"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@usernamekamu" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="width: 46px; height: 46px; background: #111; color: #FFF; border: 2px solid #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.4); text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+            <a href="https://github.com/usernamekamu" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width: 46px; height: 46px; background: #111; color: #FFF; border: 2px solid #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.4); text-decoration: none;"><i class="fab fa-github"></i></a>
         </div>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Produk</h3>
+            <a href="#">Galeri Utama</a>
+            <a href="#">Artefak Kode</a>
+            <a href="#">Eksperimen UI</a>
+            <a href="#">SaaS Apps</a>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Kreator</h3>
+            <a href="#">Tentang Saya</a>
+            <a href="#">Log Aktivitas</a>
+            <a href="#">Panduan Kode</a>
+            <a href="#">Repository</a>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Dukungan</h3>
+            <a href="#">Hubungi Kami</a>
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat Layanan</a>
+        </div>
+    </div>
+
+    <div class="footer-middle">
+        <div class="contact-item">
+            <span>✉️</span> kurator.museum@gmail.com
+        </div>
+        <div class="contact-item">
+            <span>📞</span> +62 812-3456-7890 (WA ONLY)
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Museum. Hak cipta dilindungi undang-undang.</p>
+        <div class="footer-badges">
+            <span class="badge">✨ Bebas Iklan</span>
+            <span class="badge">🚀 Akses Cepat</span>
+        </div>
+    </div>
     </footer>
+
+    <!-- =========================================================
+        MODAL DETAIL PROYEK (PUBLIK)
+    ========================================================= -->
+    <div id="detail-project-modal" class="detail-modal-overlay">
+        <div class="detail-modal-card">
+            <button id="close-detail-modal-btn" class="detail-modal-close">X</button>
+            <div id="detail-modal-body"></div>
+        </div>
+    </div>
+
     <!-- =========================================================
         MODAL FORM TAMBAH PROYEK (KHUSUS ADMIN)
     ========================================================= -->
@@ -206,8 +267,13 @@
                     <input type="text" id="proj-title" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
                 </div>
                 <div class="form-group" style="margin-bottom: 15px;">
-                    <label for="proj-category" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">KATEGORI (Cth: ARCHEOLOGY / WEB)</label>
-                    <input type="text" id="proj-category" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                    <label for="proj-category" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">KATEGORI</label>
+                    <select id="proj-category" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                        <option value="" disabled selected>Pilih kategori</option>
+                        <option value="WEB">WEB</option>
+                        <option value="WEB APP">WEB APP</option>
+                        <option value="GAME">GAME</option>
+                    </select>
                 </div>
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label for="proj-desc" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">DESKRIPSI</label>
@@ -217,12 +283,11 @@
                     <label for="proj-tech" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">TEKNOLOGI (Pisahkan dengan koma, cth: HTML, CSS)</label>
                     <input type="text" id="proj-tech" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
                 </div>
-               <!-- Bagian input gambar di dalam modal index.html -->
              <div class="form-group" style="margin-bottom: 15px;">
                 <label for="proj-file" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">PILIH FILE GAMBAR ARTEFAK</label>
                 <input type="file" id="proj-file" accept="image/*" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
             </div>
-                     <div class="form-group" style="margin-bottom: 20px;">
+                 <div class="form-group" style="margin-bottom: 20px;">
                     <label for="proj-url" style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">LINK PROYEK / Tautan Luar</label>
                     <input type="text" id="proj-url" placeholder="#" style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
                 </div>
@@ -230,7 +295,8 @@
             </form>
         </div>
     </div>
-<!-- =========================================================
+
+    <!-- =========================================================
         MODAL FORM EDIT PROYEK (KHUSUS ADMIN)
     ========================================================= -->
     <div id="edit-project-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 20px;">
@@ -248,7 +314,12 @@
                 </div>
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">KATEGORI</label>
-                    <input type="text" id="edit-proj-category" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                    <select id="edit-proj-category" required style="width:100%; padding:10px; border:3px solid #111; background:#F5F0E8; font-weight:700;">
+                        <option value="" disabled>Pilih kategori</option>
+                        <option value="WEB">WEB</option>
+                        <option value="WEB APP">WEB APP</option>
+                        <option value="GAME">GAME</option>
+                    </select>
                 </div>
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display:block; font-size:12px; font-weight:900; margin-bottom:5px;">DESKRIPSI</label>
@@ -271,6 +342,18 @@
             </form>
         </div>
     </div>
+
+    <!-- ========================================================= -->
+    <!-- CUSTOM NOTIFICATION MODAL (NEOBRUTALISM CARD) -->
+    <!-- ========================================================= -->
+    <div id="custom-notification-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: #FFF; border: 4px solid #111; box-shadow: 12px 12px 0 #111; width: 100%; max-width: 400px; padding: 30px; text-align: center; position: relative;">
+            <h3 id="notif-title" style="font-size: 22px; font-weight: 900; margin-bottom: 15px; letter-spacing: -1px;">INFORMASI</h3>
+            <p id="notif-message" style="font-size: 15px; font-weight: 700; margin-bottom: 25px; line-height: 1.5; color: #111;"></p>
+            <button id="notif-close-btn" style="background: #FFD166; color: #111; border: 3px solid #111; padding: 12px 20px; font-weight: 900; cursor: pointer; box-shadow: 4px 4px 0 #111; width: 100%;">MENGERTI &rarr;</button>
+        </div>
+    </div>
+    
     <!-- Custom Javascript (Supabase integration) -->
     <script src="script.js"></script>
 </body>

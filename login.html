@@ -16,12 +16,96 @@
     
     <style>
         .login-body {
-            background: #F5F0E8;
+            background-color: #FDFBF7;
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            color: #111;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Objek Dekorasi Latar Belakang Khas Neobrutalism */
+        .bg-shape {
+            position: absolute;
+            z-index: 0;
+            border: 3px solid #111;
+            font-weight: 900;
+        }
+
+        .shape-star-1 {
+            top: 10%;
+            left: 8%;
+            font-size: 45px;
+            color: #FFD166;
+            -webkit-text-stroke: 2px #111;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .shape-star-2 {
+            bottom: 15%;
+            right: 10%;
+            font-size: 55px;
+            color: #7B61FF;
+            -webkit-text-stroke: 2px #111;
+            animation: float 5s ease-in-out infinite reverse;
+        }
+
+        .shape-box-1 {
+            top: 15%;
+            right: 12%;
+            width: 70px;
+            height: 70px;
+            background: #FFD166;
+            border-radius: 16px;
+            box-shadow: 5px 5px 0 #111;
+            transform: rotate(15deg);
+        }
+
+        .shape-box-2 {
+            bottom: 20%;
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            background: #7B61FF;
+            border-radius: 12px;
+            box-shadow: 5px 5px 0 #111;
+            transform: rotate(-10deg);
+        }
+
+        .shape-pill {
+            top: 45%;
+            left: 4%;
+            padding: 8px 16px;
+            background: #FF6B6B;
+            color: white;
+            border-radius: 99px;
+            font-size: 11px;
+            box-shadow: 4px 4px 0 #111;
+            transform: rotate(-6deg);
+        }
+
+        .shape-badge-float {
+            top: 35%;
+            right: 6%;
+            padding: 10px 18px;
+            background: #4ECDC4;
+            color: #111;
+            border-radius: 12px;
+            font-size: 12px;
+            box-shadow: 4px 4px 0 #111;
+            transform: rotate(8deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
         }
 
         .login-card {
@@ -29,9 +113,11 @@
             max-width: 450px;
             background: white;
             border: 4px solid #111;
+            border-radius: 24px;
             box-shadow: 12px 12px 0 #111;
             padding: 40px;
             position: relative;
+            z-index: 10;
         }
 
         .login-header {
@@ -47,7 +133,7 @@
         }
 
         .login-header h1 span {
-            color: #CC8899;
+            color: #7B61FF;
             -webkit-text-stroke: 2px #111;
         }
 
@@ -66,7 +152,8 @@
             width: 100%;
             padding: 14px 16px;
             border: 3px solid #111;
-            background: #F5F0E8;
+            border-radius: 12px;
+            background: #F9F6EE;
             font-family: "DM Sans", sans-serif;
             font-weight: 700;
             font-size: 14px;
@@ -77,18 +164,20 @@
         .login-btn {
             width: 100%;
             padding: 16px;
-            background: #FF9CB4;
+            background: #FFD166;
             color: #111;
             border: 3px solid #111;
+            border-radius: 99px;
             font-weight: 900;
             font-size: 14px;
             cursor: pointer;
             box-shadow: 6px 6px 0 #111;
             margin-top: 10px;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
         }
 
         .login-btn:hover {
-            transform: translate(4px, 4px);
+            transform: translate(2px, 2px);
             box-shadow: 2px 2px 0 #111;
         }
 
@@ -97,6 +186,7 @@
             margin-top: 20px;
             font-size: 12px;
             font-weight: 900;
+            color: #111;
             text-decoration: underline;
         }
 
@@ -104,21 +194,45 @@
             background: #EF476F;
             color: white;
             border: 2px solid #111;
+            border-radius: 8px;
             padding: 10px;
             font-size: 12px;
             font-weight: 900;
             margin-bottom: 20px;
             display: none;
+            box-shadow: 3px 3px 0 #111;
+        }
+
+        .mini-label {
+            display: inline-block;
+            background: #FFD166;
+            border: 3px solid #111;
+            border-radius: 99px;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 900;
+            box-shadow: 3px 3px 0 #111;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body class="login-body">
 
+    <!-- Objek-objek Latar Belakang -->
+    <div class="bg-shape shape-star-1">✦</div>
+    <div class="bg-shape shape-star-2">✦</div>
+    <div class="bg-shape shape-box-1"></div>
+    <div class="bg-shape shape-box-2"></div>
+    <div class="bg-shape shape-pill">MUSEUM VIRTUAL</div>
+    <div class="bg-shape shape-badge-float">CURATOR ACCESS</div>
+
     <div class="login-card">
-        <div class="mini-label" style="margin-bottom: 15px;">AREA TERBATAS</div>
+        <div style="text-align: center;">
+            <div class="mini-label">AREA TERBATAS</div>
+        </div>
         <div class="login-header">
             <h1>LOGIN <span>ADMIN</span></h1>
-            <p style="font-size: 13px; margin-top: 5px; font-weight: 700;">Khusus kurator untuk mengelola artefak museum.</p>
+            <p style="font-size: 13px; margin-top: 5px; font-weight: 700; color: #555;">Khusus kurator untuk mengelola artefak museum.</p>
         </div>
 
         <div id="error-alert" class="error-message">Email atau password salah!</div>
@@ -142,6 +256,7 @@
         </div>
     </div>
 
+    <!-- SCRIPT UTAMA SUPABASE & LOGIN (Tanpa Card/Alert, Langsung Masuk) -->
     <script>
         const SUPABASE_URL = 'https://skbedgzcqwehxjunaocl.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrYmVkZ3pjcXdlaHhqdW5hb2NsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTQ1NzYsImV4cCI6MjEwNDMzMDU3Nn0.f2h_H_EppRgVLLvoOmu7T7KyAfmmgMs-WT5AXsasqWE';
@@ -157,10 +272,6 @@
             const email = document.getElementById('admin-email').value.trim();
             const password = document.getElementById('admin-password').value.trim();
 
-            console.log("--- DATA YANG DIKIRIM ---");
-            console.log("Email:", email);
-            console.log("Password:", password);
-
             errorAlert.style.display = 'none';
 
             try {
@@ -170,27 +281,21 @@
                     .eq('email', email)
                     .eq('password', password);
 
-                console.log("--- RESPON DARI SUPABASE ---");
-                console.log("Error object:", error);
-                console.log("Data result:", data);
-
                 if (error) {
                     throw error;
                 }
 
                 if (data && data.length > 0) {
-                    console.log("Login sukses! Menyimpan ke localStorage...");
                     localStorage.setItem('isAdminLoggedIn', 'true');
                     localStorage.setItem('adminEmail', data[0].email);
-                    alert('Login Berhasil! Selamat datang Kurator.');
+                    
+                    // Langsung pindah ke index.html tanpa card / alert
                     window.location.href = 'index.html'; 
                 } else {
-                    console.warn("Data kosong (array length 0). Email/password tidak cocok atau diblokir RLS.");
                     errorAlert.style.display = 'block';
                     errorAlert.textContent = 'Email atau password salah!';
                 }
             } catch (err) {
-                console.error("Catch error tertangkap:", err.message);
                 errorAlert.style.display = 'block';
                 errorAlert.textContent = 'Terjadi kesalahan: ' + err.message;
             }

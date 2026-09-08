@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang & Pengalaman Kurator - Museum Portofolio</title>
+    
+    <!-- Google Fonts: DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS dari style_2.css -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background-color: #FDFBF7;
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto 0 auto;
+            min-height: 70px;
+            padding: 10px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid #111;
+            background: #FFFFFF;
+            border-radius: 20px;
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            box-shadow: 4px 4px 0 #111;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+
+        .logo span {
+            color: #7B61FF;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar nav a {
+            font-size: 13px;
+            font-weight: 700;
+            color: #444;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .navbar nav a:hover {
+            color: #111;
+        }
+
+        .nav-button {
+            background: #7B61FF;
+            color: white;
+            padding: 10px 20px;
+            border: 3px solid #111;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 900;
+            text-decoration: none;
+            box-shadow: 3px 3px 0 #111;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .nav-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 #111;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dark-toggle-btn {
+            width: 40px;
+            height: 40px;
+            background: #FFD166;
+            border: 3px solid #111;
+            border-radius: 50%;
+            box-shadow: 2px 2px 0 #111;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            background: #111;
+            color: #FFF;
+            border: 3px solid #111;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* SECTION & GENERAL */
+        .section {
+            padding: 90px 7%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title > span {
+            background: #111;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 99px;
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .section-title h2 {
+            font-size: clamp(32px, 4.5vw, 55px);
+            letter-spacing: -1.5px;
+            font-weight: 900;
+        }
+
+        .section-title h2 span {
+            color: #7B61FF;
+            -webkit-text-stroke: 2px #111;
+        }
+
+        /* ABOUT SECTION */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .big-text {
+            font-size: clamp(24px, 3vw, 38px);
+            line-height: 1.2;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .big-text span {
+            background: #FFD166;
+            padding: 2px 8px;
+            border: 3px solid #111;
+            border-radius: 8px;
+        }
+
+        .about-text > p:not(.big-text) {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border: 3px solid #111;
+            border-radius: 99px;
+            font-size: 13px;
+            font-weight: 900;
+            transition: 0.15s ease;
+        }
+
+        .btn-black {
+            background: #111;
+            color: white;
+            box-shadow: 4px 4px 0 #7B61FF;
+        }
+
+        .btn-yellow {
+            background: #FFD166;
+            box-shadow: 4px 4px 0 #111;
+            color: #111;
+        }
+
+        .btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 #111;
+        }
+
+        /* PROFILE CARD */
+        .hero-right {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            width: min(100%, 420px);
+            background: white;
+            border: 4px solid #111;
+            border-radius: 24px;
+            box-shadow: 10px 10px 0 #111;
+            overflow: hidden;
+        }
+
+        .card-top {
+            height: 45px;
+            padding: 0 20px;
+            border-bottom: 4px solid #111;
+            background: #667dff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .profile-photo {
+            height: 320px;
+            padding: 15px;
+            background: #F9F6EE;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 3px solid #111;
+            border-radius: 16px;
+        }
+
+        .profile-info {
+            border-top: 4px solid #111;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #FFF;
+        }
+
+        .profile-info div {
+            padding: 15px;
+        }
+
+        .profile-info div:first-child {
+            border-right: 4px solid #111;
+        }
+
+        .profile-info small {
+            display: block;
+            font-size: 10px;
+            font-weight: 900;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .profile-info strong {
+            font-size: 14px;
+        }
+
+        /* EXPERIENCE SECTION (Diubah ke Ungu Soft) */
+        .experience {
+            background: #bdb0f0; 
+            color: #111;
+            border: 3px solid #111;
+            border-radius: 30px;
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+            padding: 60px 5%;
+            box-shadow: 8px 8px 0 #111;
+        }
+
+        .experience .section-title > span {
+            background: #111;
+            color: white;
+        }
+
+        .experience .section-title h2 {
+            color: #111;
+        }
+
+        .experience .section-title h2 span {
+            color: #7B61FF;
+            -webkit-text-stroke: 2px #111;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .experience-card {
+            background: #FFF;
+            border: 3px solid #111;
+            border-radius: 20px;
+            padding: 25px;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 5px 5px 0 #111;
+        }
+
+        .experience-card span {
+            font-size: 12px;
+            font-weight: 900;
+            color: #666;
+        }
+
+        .experience-card h3 {
+            font-size: 22px;
+            letter-spacing: -0.5px;
+            color: #111;
+        }
+
+        .experience-card p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        .yellow-card {
+            background: #FFD166;
+        }
+
+        /* MARQUEE (Dimiringkan) */
+        .marquee {
+            overflow: hidden;
+            border-top: 3px solid #111;
+            border-bottom: 3px solid #111;
+            background: #7B61FF;
+            color: white;
+            padding: 14px 0;
+            white-space: nowrap;
+            margin: 60px 0;
+            transform: rotate(-3deg); 
+            width: 105%; 
+            margin-left: -2.5%; 
+        }
+
+        .marquee-content {
+            font-size: 16px;
+            font-weight: 900;
+            animation: marquee 18s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* FOOTER */
+        .main-footer {
+            background: #7B61FF;
+            color: #FFFFFF;
+            padding: 60px 5% 30px 5%;
+            font-family: "DM Sans", sans-serif;
+            border-top: 3px solid #111;
+        }
+
+        .footer-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .brand-col .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-col .footer-logo span {
+            color: #FFD166;
+        }
+
+        .brand-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            max-width: 320px;
+        }
+
+        .footer-col h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: #FFD166;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* DARK MODE */
+        body.dark-mode {
+            background-color: #121212;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            color: #F5F0E8;
+        }
+
+        body.dark-mode .navbar {
+            background: #1E1E1E;
+            border-color: #FFF;
+            box-shadow: 4px 4px 0 #FFF;
+        }
+
+        body.dark-mode .logo,
+        body.dark-mode .navbar nav a {
+            color: #FFF;
+        }
+
+        body.dark-mode .nav-button {
+            background: #FFD166;
+            color: #111;
+            border-color: #FFF;
+            box-shadow: 3px 3px 0 #FFF;
+        }
+
+        body.dark-mode .profile-card {
+            background: #1E1E1E;
+            border-color: #FFF;
+            box-shadow: 8px 8px 0 #FFF;
+            color: #FFF;
+        }
+
+        body.dark-mode .about-text > p:not(.big-text) {
+            color: #CCC;
+        }
+
+        body.dark-mode .experience-card {
+            background: #1E1E1E;
+            border-color: #FFF;
+            color: #FFF;
+            box-shadow: 5px 5px 0 #FFF;
+        }
+
+        body.dark-mode .experience-card span {
+            color: #AAA;
+        }
+
+        body.dark-mode .experience-card h3 {
+            color: #FFF;
+        }
+
+        body.dark-mode .experience-card p {
+            color: #CCC;
+        }
+
+        body.dark-mode .experience-card.yellow-card {
+            background: #FFD166;
+            color: #111;
+        }
+
+        body.dark-mode .experience-card.yellow-card span {
+            color: #555;
+        }
+
+        body.dark-mode .experience-card.yellow-card h3 {
+            color: #111;
+        }
+
+        body.dark-mode .experience-card.yellow-card p {
+            color: #222;
+        }
+
+        @media (max-width: 1024px) {
+            .experience-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 900px) {
+            .navbar nav { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .about-content { grid-template-columns: 1fr; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .brand-col { grid-column: span 2; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR PILL -->
+    <header class="navbar">
+        <a href="index.html" class="logo">MUSEUM<span>.</span></a>
+        <nav>
+            <a href="index.html#about">ABOUT</a>
+            <a href="index.html#projects">EXHIBITION</a>
+            <a href="index.html#experience">EXPERIENCE</a>
+            <a href="about.html">CREATORS</a>
+        </nav>
+        <div class="navbar-right">
+            <button class="dark-toggle-btn" id="theme-toggle">🌙</button>
+            <a href="index.html" class="nav-button">KEMBALI KE UTAMA</a>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- SECTION TENTANG -->
+    <section class="section">
+        <div class="section-title">
+            <span>01 // BIOGRAFI</span>
+            <h2>CERITA DI BALIK <span>LAYAR</span></h2>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p class="big-text">
+                    Halo! Saya adalah pengembang di balik kurasi artefak digital ini. Menyelami dunia <span>kode dan desain</span> dengan penuh rasa penasaran.
+                </p>
+                <p>
+                    Museum digital ini diciptakan bukan sekadar sebagai tempat memajang portofolio konvensional, melainkan arsip hidup dari perjalanan pemecahan masalah menggunakan teknologi web modern.
+                </p>
+                <p>
+                    Fokus utama meliputi perancangan antarmuka reaktif, pengelolaan basis data yang andal, serta penciptaan pengalaman pengguna yang interaktif dan berkesan.
+                </p>
+            </div>
+            
+            <!-- KARTU PROFIL -->
+            <div class="hero-right">
+                <div class="profile-card">
+                    <div class="card-top">
+                        <span>KURATOR #001</span>
+                        <span>STATUS: AKTIF</span>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="gua.png" alt="Foto Kurator" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <div>
+                            <small>KEAHLIAN</small>
+                            <strong>Full-Stack</strong>
+                        </div>
+                        <div>
+                            <small>FOKUS</small>
+                            <strong>Web & UI/UX</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-content">
+            ✦ TENTANG KURATOR ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ ARTIFAK DIGITAL ✦ KODE BERSIH ✦ TENTANG KURATOR ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ ARTIFAK DIGITAL ✦ KODE BERSIH
+            ✦ TENTANG KURATOR ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ ARTIFAK DIGITAL ✦ KODE BERSIH ✦ TENTANG KURATOR ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ ARTIFAK DIGITAL ✦ KODE BERSIH
+            ✦ TENTANG KURATOR ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ ARTIFAK DIGITAL ✦ KODE BERSIH ✦ TENTANG KURATOR ✦ KREATIF ✦ INOVATIF ✦ DEVELOPER ✦ DESIGNER ✦ ARTIFAK DIGITAL ✦ KODE BERSIH
+        </div>
+    </div>
+
+    <!-- SECTION PENGALAMAN -->
+    <section id="experience-section">
+        <div class="experience">
+            <div class="section-title">
+                <span>02 // JEJAK KARIER</span>
+                <h2>JEJAK & <span>PENGALAMAN</span></h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card yellow-card">
+                    <span>2024 - SEKARANG</span>
+                    <h3>Lead Frontend Developer</h3>
+                    <p>Memimpin pengembangan antarmuka web interaktif dengan standar desain neobrutalisme dan performa tinggi.</p>
+                </div>
+                <div class="experience-card">
+                    <span>2022 - 2024</span>
+                    <h3>UI/UX & Web Designer</h3>
+                    <p>Merancang berbagai sistem tata letak digital, riset pengguna, serta implementasi komponen visual yang konsisten.</p>
+                </div>
+                <div class="experience-card">
+                    <span>2020 - 2022</span>
+                    <h3>Junior Web Creator</h3>
+                    <p>Memulai eksplorasi pengkodean dasar, manipulasi DOM JavaScript, serta pengelolaan basis data relasional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="brand-col">
+                <div class="footer-logo">MUSEUM<span>.</span></div>
+                <p class="brand-desc">Platform arsip karya digital dan kurasi artefak kode terbaik dengan sentuhan neobrutalisme.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigasi</h3>
+                <a href="index.html">Beranda</a>
+                <a href="index.html#projects">Pameran</a>
+                <a href="index.html#experience">Pengalaman</a>
+            </div>
+            <div class="footer-col">
+                <h3>Dukungan</h3>
+                <a href="index.html#contact">Hubungi Kami</a>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <a href="#">Privasi</a>
+                <a href="#">Ketentuan</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Museum Portofolio. Hak cipta dilindungi undang-undang.</p>
+            <p>Dibuat dengan gaya khas Jepreto</p>
+        </div>
+    </footer>
+
+    <!-- Script Sederhana untuk Toggle Dark Mode -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>
