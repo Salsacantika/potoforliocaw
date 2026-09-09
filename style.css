@@ -39,7 +39,7 @@ a {
     max-width: 1200px;
     margin: 20px auto 0 auto;
     min-height: 70px;
-    padding: 10px 25px;
+    padding: 10px 25px 10px 14px;
 
     display: flex;
     align-items: center;
@@ -56,10 +56,19 @@ a {
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-size: 22px;
     font-weight: 900;
     letter-spacing: -1px;
     cursor: pointer;
+}
+
+.logo-img {
+    height: 95px;
+    width: auto;
+    display: block;
 }
 
 .logo span {
@@ -72,6 +81,9 @@ a {
 }
 
 .navbar nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 13px;
     font-weight: 700;
     color: #444;
@@ -79,8 +91,22 @@ a {
     transition: 0.2s;
 }
 
+.navbar nav a i {
+    font-size: 12px;
+    color: #7B61FF;
+    transition: 0.2s;
+}
+
 .navbar nav a:hover {
     color: #111;
+}
+
+.navbar nav a:hover i {
+    transform: translateY(-1px);
+}
+
+.nav-button i {
+    margin-right: 2px;
 }
 
 .nav-button {
@@ -156,10 +182,20 @@ a {
 }
 
 .mobile-nav-overlay a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 16px 20px;
     font-size: 14px;
     font-weight: 900;
     border-bottom: 2px solid #eee;
+}
+
+.mobile-nav-overlay a i {
+    font-size: 13px;
+    color: #7B61FF;
+    width: 18px;
+    text-align: center;
 }
 
 
@@ -476,7 +512,7 @@ a {
 ========================================================= */
 
 .section.projects {
-    background: #7B61FF;
+    background: #ac9dfc;
     border: 3px solid #111;
     border-radius: 30px;
     margin: 40px auto;

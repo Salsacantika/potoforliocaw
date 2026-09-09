@@ -7,6 +7,7 @@
     
     <!-- Google Fonts: DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="logoAPP.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     
@@ -61,10 +62,19 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 22px;
             font-weight: 900;
             letter-spacing: -1px;
             cursor: pointer;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
         }
 
         .logo span {
@@ -77,6 +87,9 @@
         }
 
         .navbar nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             font-size: 13px;
             font-weight: 700;
             color: #444;
@@ -84,8 +97,22 @@
             transition: 0.2s;
         }
 
+        .navbar nav a i {
+            font-size: 12px;
+            color: #7B61FF;
+            transition: 0.2s;
+        }
+
         .navbar nav a:hover {
             color: #111;
+        }
+
+        .navbar nav a:hover i {
+            transform: translateY(-1px);
+        }
+
+        .nav-button i {
+            margin-right: 2px;
         }
 
         .nav-button {
@@ -205,33 +232,6 @@
             margin-top: 15px;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 14px 24px;
-            border: 3px solid #111;
-            border-radius: 99px;
-            font-size: 13px;
-            font-weight: 900;
-            transition: 0.15s ease;
-        }
-
-        .btn-black {
-            background: #111;
-            color: white;
-            box-shadow: 4px 4px 0 #7B61FF;
-        }
-
-        .btn-yellow {
-            background: #FFD166;
-            box-shadow: 4px 4px 0 #111;
-            color: #111;
-        }
-
-        .btn:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0 #111;
-        }
-
         /* PROFILE CARD */
         .hero-right {
             position: relative;
@@ -261,7 +261,7 @@
         }
 
         .profile-photo {
-            height: 320px;
+            height: 260px;
             padding: 15px;
             background: #F9F6EE;
         }
@@ -282,11 +282,16 @@
         }
 
         .profile-info div {
-            padding: 15px;
+            padding: 12px 15px;
+            border-bottom: 3px solid #111;
         }
 
-        .profile-info div:first-child {
+        .profile-info div:nth-child(odd) {
             border-right: 4px solid #111;
+        }
+
+        .profile-info div:nth-last-child(-n+2) {
+            border-bottom: none;
         }
 
         .profile-info small {
@@ -294,14 +299,14 @@
             font-size: 10px;
             font-weight: 900;
             color: #666;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .profile-info strong {
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        /* EXPERIENCE SECTION (Diubah ke Ungu Soft) */
+        /* EXPERIENCE SECTION */
         .experience {
             background: #bdb0f0; 
             color: #111;
@@ -369,7 +374,7 @@
             background: #FFD166;
         }
 
-        /* MARQUEE (Dimiringkan) */
+        /* MARQUEE */
         .marquee {
             overflow: hidden;
             border-top: 3px solid #111;
@@ -499,6 +504,10 @@
             color: #FFF;
         }
 
+        body.dark-mode .profile-info div {
+            border-color: #FFF;
+        }
+
         body.dark-mode .about-text > p:not(.big-text) {
             color: #CCC;
         }
@@ -557,16 +566,19 @@
 
     <!-- NAVBAR PILL -->
     <header class="navbar">
-        <a href="index.html" class="logo">MUSEUM<span>.</span></a>
+        <a href="index.html" class="logo">
+            <img src="logoAPP.png" alt="Logo">
+            CACA.MUSEUM<span>.</span>
+        </a>
         <nav>
-            <a href="index.html#about">ABOUT</a>
-            <a href="index.html#projects">EXHIBITION</a>
-            <a href="index.html#experience">EXPERIENCE</a>
-            <a href="about.html">CREATORS</a>
+            <a href="index.html#about"><i class="fa-solid fa-user"></i> ABOUT</a>
+            <a href="index.html#projects"><i class="fa-solid fa-layer-group"></i> EXHIBITION</a>
+            <a href="index.html#experience"><i class="fa-solid fa-briefcase"></i> EXPERIENCE</a>
+            <a href="about.html"><i class="fa-solid fa-users"></i> CREATORS</a>
         </nav>
         <div class="navbar-right">
             <button class="dark-toggle-btn" id="theme-toggle">🌙</button>
-            <a href="index.html" class="nav-button">KEMBALI KE UTAMA</a>
+            <a href="index.html" class="nav-button"><i class="fa-solid fa-arrow-left"></i> KEMBALI KE UTAMA</a>
             <button class="mobile-menu-btn" aria-label="Menu">☰</button>
         </div>
     </header>
@@ -581,7 +593,7 @@
         <div class="about-content">
             <div class="about-text">
                 <p class="big-text">
-                    Halo! Saya adalah pengembang di balik kurasi artefak digital ini. Menyelami dunia <span>kode dan desain</span> dengan penuh rasa penasaran.
+                    Halo! Saya <span>Salsa Cantika</span>, pengembang di balik kurasi artefak digital ini. Menyelami dunia <span>kode dan desain</span> selama lebih dari 2 tahun dengan penuh rasa penasaran.
                 </p>
                 <p>
                     Museum digital ini diciptakan bukan sekadar sebagai tempat memajang portofolio konvensional, melainkan arsip hidup dari perjalanan pemecahan masalah menggunakan teknologi web modern.
@@ -603,12 +615,12 @@
                     </div>
                     <div class="profile-info">
                         <div>
-                            <small>KEAHLIAN</small>
-                            <strong>Full-Stack</strong>
+                            <small>NAMA</small>
+                            <strong>Salsa Cantika Indriyani</strong>
                         </div>
                         <div>
-                            <small>FOKUS</small>
-                            <strong>Web & UI/UX</strong>
+                            <small>ALAMAT</small>
+                            <strong>Tasikmalaya, Indonesia</strong>
                         </div>
                     </div>
                 </div>
@@ -639,12 +651,12 @@
                     <p>Memimpin pengembangan antarmuka web interaktif dengan standar desain neobrutalisme dan performa tinggi.</p>
                 </div>
                 <div class="experience-card">
-                    <span>2022 - 2024</span>
+                    <span>2025</span>
                     <h3>UI/UX & Web Designer</h3>
                     <p>Merancang berbagai sistem tata letak digital, riset pengguna, serta implementasi komponen visual yang konsisten.</p>
                 </div>
                 <div class="experience-card">
-                    <span>2020 - 2022</span>
+                    <span>2025-2026</span>
                     <h3>Junior Web Creator</h3>
                     <p>Memulai eksplorasi pengkodean dasar, manipulasi DOM JavaScript, serta pengelolaan basis data relasional.</p>
                 </div>
@@ -656,7 +668,7 @@
     <footer class="main-footer">
         <div class="footer-top">
             <div class="brand-col">
-                <div class="footer-logo">MUSEUM<span>.</span></div>
+                <div class="footer-logo">CACA.MUSEUM<span>.</span></div>
                 <p class="brand-desc">Platform arsip karya digital dan kurasi artefak kode terbaik dengan sentuhan neobrutalisme.</p>
             </div>
             <div class="footer-col">
@@ -677,7 +689,7 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Museum Portofolio. Hak cipta dilindungi undang-undang.</p>
-            <p>Dibuat dengan gaya khas Jepreto</p>
+            <p>Dibuat dengan gaya khas Pribadi</p>
         </div>
     </footer>
 
